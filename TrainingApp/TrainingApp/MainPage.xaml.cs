@@ -72,7 +72,6 @@ namespace TrainingApp
                     this.BackgroundColor= Color.LightBlue;
                 }
 
-                // Переключаемся на следующий цикл или меняем состояние работы/отдыха
                 if (!isWorkTime)
                 {
                     currentCycle++;
