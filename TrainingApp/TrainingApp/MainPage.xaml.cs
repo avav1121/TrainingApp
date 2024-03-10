@@ -57,7 +57,6 @@ namespace TrainingApp
                     TimerLabel.Text = "Тренировка завершена";
                     this.BackgroundColor = new Color(0.14, 0.14, 0.16);
                     return false;
-
                 }
 
                 // Смена состояния: работа или отдых
@@ -71,7 +70,7 @@ namespace TrainingApp
                 {
                     TimerLabel.Text = "Отдых";
                     currentTime = restTime;
-                    this.BackgroundColor= Color.Blue;
+                    this.BackgroundColor= Color.LightBlue;
                 }
 
                 // Переключаемся на следующий цикл или меняем состояние работы/отдыха
