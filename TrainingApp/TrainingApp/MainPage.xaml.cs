@@ -24,7 +24,6 @@ namespace TrainingApp
         {
             InitializeComponent();
             this.BackgroundColor = new Color(0.14, 0.14, 0.16);
-
         }
 
         private void StartButton_Clicked(object sender, EventArgs e)
