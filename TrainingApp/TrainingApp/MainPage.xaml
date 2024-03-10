@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingApp.MainPage">
+    <StackLayout Padding="20">
+        <Label Text="Подготовка (сек):" />
+        <Entry x:Name="PreparationEntry" Keyboard="Numeric" />
+
+        <Label Text="Работа (сек):" />
+        <Entry x:Name="WorkEntry" Keyboard="Numeric" />
+
+        <Label Text="Отдых (сек):" />
+        <Entry x:Name="RestEntry" Keyboard="Numeric" />
+
+        <Label Text="Цикл (количество):" />
+        <Entry x:Name="CycleEntry" Keyboard="Numeric" />
+
+        <Label x:Name="TimerLabel" Text="00:00" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" FontSize="24" />
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Старт" Clicked="StartButton_Clicked" />
+            <Button Text="Пауза" Clicked="PauseButton_Clicked" />
+            <Button Text="Продолжить" Clicked="ResumeButton_Clicked" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
