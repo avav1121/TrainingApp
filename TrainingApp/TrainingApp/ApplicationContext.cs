@@ -10,7 +10,7 @@ namespace TrainingApp
     internal class ApplicationContext : DbContext 
     {
         private string _databasePath;
-        public DbSet<TrainingResult> Friends { get; set; }
+        public DbSet<Sport> Sport { get; set; }
         public ApplicationContext(string databasePath)
         {
             Database.EnsureDeleted();

@@ -4,9 +4,12 @@ using System.Text;
 
 namespace TrainingApp
 {
-    public class TrainingResult
+    public class Sport
     {
         public int Id { get; set; }
+
+        public string Name { get; set; }
+
         public int CyclesCount { get; set; }
 
         public int TimeOfTraining { get; set; }

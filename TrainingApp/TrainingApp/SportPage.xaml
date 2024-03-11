@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrainingApp.SportPage" Title="Информация о спорте">
+    <StackLayout>
+        <Label Text="Название" />
+        <Entry Text="{Binding Name}" />
+        <Label Text="Колличество кругов" />
+        <Entry Text="{Binding CyclesCount}" />
+        <Label Text="Время активности" />
+        <Entry Text="{Binding TimeOfTraining}" />
+        <Label Text="Время отдыха" />
+        <Entry Text="{Binding TimeOfChill}" />
+        <Label Text="Суммарное время" />
+        <Entry Text="{Binding TotalTime}" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Сохранить" Clicked="SaveSport" />
+            <Button Text="Удалить" Clicked="DeleteSport" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
