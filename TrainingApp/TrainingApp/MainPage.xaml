@@ -21,5 +21,25 @@
             <Button Text="Пауза" Clicked="PauseButton_Clicked" />
             <Button Text="Продолжить" Clicked="ResumeButton_Clicked" />
         </StackLayout>
+
+        <StackLayout>
+            <Button Text="Добавить" Clicked="CreateSport" />
+            <ListView x:Name="sportList" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" FontSize="Medium" />
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
     </StackLayout>
+    
+   
 </ContentPage>

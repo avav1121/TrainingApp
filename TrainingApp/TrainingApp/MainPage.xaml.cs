@@ -24,7 +24,6 @@ namespace TrainingApp
         {
             InitializeComponent();
             this.BackgroundColor = new Color(0.14, 0.14, 0.16);
-
         }
 
         private void StartButton_Clicked(object sender, EventArgs e)
@@ -73,7 +72,6 @@ namespace TrainingApp
                     this.BackgroundColor= Color.LightBlue;
                 }
 
-                // Переключаемся на следующий цикл или меняем состояние работы/отдыха
                 if (!isWorkTime)
                 {
                     currentCycle++;
@@ -86,7 +84,32 @@ namespace TrainingApp
             });
             
         }
+        protected override void OnAppearing()
+        {
+            string dbPath = DependencyService.Get<IPath>().GetDatabasePath(App.DBFILENAME);
+            using (ApplicationContext db = new ApplicationContext(dbPath))
+            {
+                sportList.ItemsSource = db.Sport.ToList();
+            }
+            base.OnAppearing();
+        }
 
+        // обработка нажатия элемента в списке
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Sport selectedSport = (Sport)e.SelectedItem;
+            SportPage sportPage = new SportPage();
+            sportPage.BindingContext = selectedSport;
+            await Navigation.PushAsync(sportPage);
+        }
+        // обработка нажатия кнопки добавления
+        private async void CreateSport(object sender, EventArgs e)
+        {
+            Sport sport = new Sport();
+            SportPage sportPage = new SportPage();
+            sportPage.BindingContext = sport;
+            await Navigation.PushAsync(sportPage);
+        }
         private void PauseButton_Clicked(object sender, EventArgs e)
         {
             isPaused = true;
